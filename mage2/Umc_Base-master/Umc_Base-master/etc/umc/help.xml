@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Umc_Base extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category  Umc
+ * @package   Umc_Base
+ * @copyright Marius Strajeru
+ * @license   http://opensource.org/licenses/mit-license.php MIT License
+ * @author    Marius Strajeru <ultimate.module.creator@gmail.com>
+ */
+-->
+<help xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Umc_Base:etc/umc/help.xsd">
+    <section id="general">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">General Information</argument>
+            <argument name="sort" xsi:type="number">10</argument>
+        </arguments>
+        <fieldset id="modules">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Installed UMC2 modules</argument>
+                <argument name="source" xsi:type="object">Umc\Base\Model\Help\Version</argument>
+                <argument name="description" xsi:type="string" translate="true">UMC2 consists of several modules. Each one except the base module can be disabled. Your current installed modules are:</argument>
+            </arguments>
+        </fieldset>
+        <fieldset id="files">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Generated files</argument>
+                <argument name="source" xsi:type="object">Umc\Base\Model\Help\Files</argument>
+                <argument name="description" xsi:type="string" translate="true">UMC2 generates the files needed for your module. You can find below the list of generated files.</argument>
+            </arguments>
+        </fieldset>
+    </section>
+    <section id="fields">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Creating a module</argument>
+            <argument name="sort" xsi:type="number">20</argument>
+        </arguments>
+        <fieldset id="fields">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Fields to fill in</argument>
+                <argument name="source" xsi:type="object">Umc\Base\Model\Help\Fields</argument>
+                <argument name="description" xsi:type="string" translate="true">In order to create a module you will need to fill in a form. You will need to fill in your module settings, add as many entities as you want and as many attributes as you need for each entity. Here is what you need to fill in.</argument>
+            </arguments>
+        </fieldset>
+    </section>
+    <section id="restrictions">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Naming restrictions</argument>
+            <argument name="sort" xsi:type="number">30</argument>
+        </arguments>
+        <fieldset id="module">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Module naming restrictions</argument>
+                <argument name="source" xsi:type="object">UmcModelHelpModuleRestrictions</argument>
+                <argument name="description" xsi:type="string" translate="true">There are some naming restrictions for the module setup.</argument>
+            </arguments>
+        </fieldset>
+        <fieldset id="entity">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Entity naming restrictions</argument>
+                <argument name="source" xsi:type="object">UmcModelHelpEntityRestrictions</argument>
+                <argument name="description" xsi:type="string" translate="true">There are some naming restrictions for the entity setup.</argument>
+            </arguments>
+        </fieldset>
+        <fieldset id="attribute">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Attribute naming restrictions</argument>
+                <argument name="source" xsi:type="object">UmcModelHelpAttributeRestrictions</argument>
+                <argument name="description" xsi:type="string" translate="true">There are some naming restrictions for the attribute setup.</argument>
+            </arguments>
+        </fieldset>
+    </section>
+
+    <section id="release-notes">
+        <arguments>
+            <argument name="label" xsi:type="string" translate="true">Release Notes</argument>
+            <argument name="class" xsi:type="object">Umc\Base\Model\Help\Section\ReleaseNotes</argument>
+            <argument name="sort" xsi:type="number">30</argument>
+        </arguments>
+    </section>
+</help>

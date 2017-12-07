@@ -1,0 +1,4 @@
+ - "{{Label}}","{{Label}}"
+"{{note}}","{{note}}"
+ - "{{LabelEscaped}}","{{LabelEscaped}}"
+{{optionsI18n}}

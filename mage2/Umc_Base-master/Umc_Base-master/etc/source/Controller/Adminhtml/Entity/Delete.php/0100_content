@@ -1,0 +1,28 @@
+    /**
+     * @return \Magento\Framework\Controller\Result\Redirect
+     */
+    public function execute()
+    {
+        $resultRedirect = $this->resultRedirectFactory->create();
+        $id = $this->getRequest()->getParam('{{entity}}_id');
+        if ($id) {
+            try {
+                $this->{{_}}{{entity}}Repository->deleteById($id);
+                $this->messageManager->addSuccessMessage(__('The {{EntityLabelEscaped}} has been deleted.'));
+                $resultRedirect->setPath('{{namespace}}_{{module}}/*/');
+                return $resultRedirect;
+            } catch ({{class Magento\Framework\Exception\NoSuchEntityException}} $e) {
+                $this->messageManager->addErrorMessage(__('The {{EntityLabelEscaped}} no longer exists.'));
+                return $resultRedirect->setPath('{{namespace}}_{{module}}/*/');
+            } catch ({{class Magento\Framework\Exception\LocalizedException}} $e) {
+                $this->messageManager->addErrorMessage($e->getMessage());
+                return $resultRedirect->setPath('{{namespace}}_{{module}}/{{entity}}/edit', ['{{entity}}_id' => $id]);
+            } catch (\Exception $e) {
+                $this->messageManager->addErrorMessage(__('There was a problem deleting the {{EntityLabelEscaped}}'));
+                return $resultRedirect->setPath('{{namespace}}_{{module}}/{{entity}}/edit', ['{{entity}}_id' => $id]);
+            }
+        }
+        $this->messageManager->addErrorMessage(__('We can\'t find a {{EntityLabelEscaped}} to delete.'));
+        $resultRedirect->setPath('{{namespace}}_{{module}}/*/');
+        return $resultRedirect;
+    }

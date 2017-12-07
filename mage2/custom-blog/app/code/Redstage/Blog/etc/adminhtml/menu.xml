@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Redstage_Blog::blog" title="Blog" module="Redstage_Blog" sortOrder="30" resource="Redstage_Blog::blog"/>
+        <add id="Redstage_Blog::blog_manage" title="All Items" module="Redstage_Blog" sortOrder="10" parent="Redstage_Blog::blog" action="blog/index/" resource="Redstage_Blog::manage"/>
+    </menu>
+</config>

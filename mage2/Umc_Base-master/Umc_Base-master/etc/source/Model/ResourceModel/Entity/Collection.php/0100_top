@@ -1,0 +1,11 @@
+    /**
+     * Define resource model
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        $this->_init(
+            {{class {{Namespace}}\{{Module}}\Model\{{Entity}}}}::class,
+            \{{Namespace}}\{{Module}}\Model\ResourceModel\{{Entity}}::class
+        );

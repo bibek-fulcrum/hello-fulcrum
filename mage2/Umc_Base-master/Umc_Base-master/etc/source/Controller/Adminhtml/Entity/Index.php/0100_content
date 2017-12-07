@@ -1,0 +1,15 @@
+    /**
+     * {{EntitiesLabel}} list.
+     *
+     * @return \Magento\Backend\Model\View\Result\Page
+     */
+    public function execute()
+    {
+        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        $resultPage = $this->{{_}}resultPageFactory->create();
+        $resultPage->setActiveMenu('{{Namespace}}_{{Module}}::{{entity}}');
+        $resultPage->getConfig()->getTitle()->prepend(__('{{EntitiesLabelEscaped}}'));
+        $resultPage->addBreadcrumb(__('{{menuText}}'), __('{{menuText}}'));
+        $resultPage->addBreadcrumb(__('{{EntitiesLabelEscaped}}'), __('{{EntitiesLabelEscaped}}'));
+        return $resultPage;
+    }

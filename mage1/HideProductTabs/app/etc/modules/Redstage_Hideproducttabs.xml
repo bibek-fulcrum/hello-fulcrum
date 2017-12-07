@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Redstage_Hideproducttabs>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Redstage_Hideproducttabs>
+    </modules>
+</config>

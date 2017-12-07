@@ -1,0 +1,30 @@
+<?php
+/**
+ * Blog template for separate item
+ *
+ */
+
+/**
+ * @var $this Redstage\Blog\Block\View
+ * @see Redstage\Blog\Block\View
+ */
+?>
+<?php $_blogItem = $this->getBlog(); ?>
+    <div class="blog_item_subtitle">
+        <?php echo $this->formatDate($_blogItem->getPublishedAt()) ?> |
+        <?php echo $this->escapeHtml($_blogItem->getAuthor()) ?>
+    </div>
+
+<div class="blog_item_view">
+    <?php if ($imageUrl = $this->getImageUrl($_blogItem, 400)): ?>
+       <p><img src="<?php echo $imageUrl ?>" alt="<?php echo $this->escapeHtml($_blogItem->getTitle()) ?>" /></p>
+    <?php endif; ?>
+
+    <div class="blog_item_content"><?php echo $_blogItem->getContent() ?></div>
+
+    <div class="pager">
+        <a href="<?php echo $this->getBackUrl() ?>">
+            <?php echo __('Return to list') ?>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<!-- ko if: bssDeliveryEnable() -->
+<li class="bss-delivery">
+    <div class="shipping_arrival_date">
+        <label for="shipping_arrival_date" data-bind="i18n: 'Delivery Date'"></label>
+        <div class="control">
+            <input readonly="readonly" id="shipping_arrival_date" class="shipping_arrival_date"
+                   type="text" size="17" name="shipping_arrival_date"
+                   data-bind="afterRender: initDate()"/>
+        </div>
+    </div>
+    <!-- ko if: bssDeliveryTimeSlot() -->
+    <div class="delivery_time_slot">
+        <label for="delivery_time_slot" data-bind="i18n: 'Delivery Time Slot'"></label>
+        <div class="delivery_time_slot">
+            <select id="delivery_time_slot"
+                    data-bind="options: listTimeSlot(),
+                        optionsText: function(item) {
+                            return item
+                        },
+                        optionsValue: function(item) {
+                            return item
+                        },
+                        optionsCaption: $t('Please select delivery time slot')">
+            </select>
+        </div>
+
+    </div>
+    <!-- /ko -->
+    <!-- ko if: bssShippingComment() -->
+    <div class="shipping_arrival_comments">
+        <label for="shipping_arrival_comments" data-bind="i18n: 'Shipping Arrival Comment'"></label>
+        <div class="datetime-delivery">
+            <textarea id="shipping_arrival_comments" class="shipping_arrival_comments"
+                   type="text" size="17" name="shipping_arrival_comments"></textarea>
+        </div>
+    </div>
+    <!-- /ko -->
+</li>
+<!-- /ko -->

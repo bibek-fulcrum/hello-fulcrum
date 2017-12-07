@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Redstage_Adminhtml::admin">
+                <resource id="Redstage_Blog::blog" title="Blog" sortOrder="40">
+                    <resource id="Redstage_Blog::manage" title="Blog Module" sortOrder="10">
+						<resource id="Redstage_Blog::save" title="Save Blog" sortOrder="10" />
+                        <resource id="Redstage_Blog::news_delete" title="Delete Blog" sortOrder="20" />
+					</resource>
+                </resource>
+                <resource id="Redstage_Adminhtml::stores">
+                    <resource id="Redstage_Adminhtml::stores_settings">
+                        <resource id="Redstage_Adminhtml::config">
+                            <resource id="Redstage_Blog::config_blog" title="Blog Section" sortOrder="50" />
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

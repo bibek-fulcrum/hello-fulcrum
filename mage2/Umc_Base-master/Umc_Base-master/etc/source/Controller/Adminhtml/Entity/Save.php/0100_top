@@ -1,0 +1,11 @@
+    /**
+     * run the action
+     *
+     * @return \Magento\Framework\Controller\Result\Redirect
+     */
+    public function execute()
+    {
+        /** @var \{{Namespace}}\{{Module}}\Api\Data\{{Entity}}Interface ${{entity}} */
+        ${{entity}} = null;
+        $postData = $this->getRequest()->getPostValue();
+        $data = $postData;

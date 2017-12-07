@@ -1,0 +1,71 @@
+<?php
+/**
+ * BSS Commerce Co.
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://bsscommerce.com/Bss-Commerce-License.txt
+ *
+ * =================================================================
+ *                 MAGENTO EDITION USAGE NOTICE
+ * =================================================================
+ * This package designed for Magento COMMUNITY edition
+ * BSS Commerce does not guarantee correct work of this extension
+ * on any other Magento edition except Magento COMMUNITY edition.
+ * BSS Commerce does not provide extension support in case of
+ * incorrect edition usage.
+ * =================================================================
+ *
+ * @category   BSS
+ * @package    Bss_OrderDeliveryDate
+ * @author     Extension Team
+ * @copyright  Copyright (c) 2015-2016 BSS Commerce Co. ( http://bsscommerce.com )
+ * @license    http://bsscommerce.com/Bss-Commerce-License.txt
+ */
+?>
+<?php
+$helper = $this->helper('Bss\OrderDeliveryDate\Helper\Data');
+?>
+<!-- <div class="block block-order-details-view"> -->
+<form id="delivery_form" action="<?php echo $block->escapeUrl($this->getUrl('orderdeliverydate/express/saveDelivery', ['_secure' => true])); ?>" method="post">
+    <div class="block-content">
+        <div class="box box-order-delivery-address">
+            <strong class="box-title"><span><?php echo $block->escapeHtml(__('Delivery Date')); ?></span></strong>
+            <div class="box-content">
+                <input class="input-text" type="text" name="delivery_arrival_date" placeholder="" id="delivery_arrival_date" value="<?php echo $this->getShippingDate() ?>" placeholder="Delivery Date" />
+
+                <?php if(!empty($helper->getTimeSlot())) : ?>
+                    <select class="select" name="delivery_time_slot" id="H9GF7RA" aria-describedby="notice-H9GF7RA" placeholder="">
+                        <option value="">Please select delivery time slot</option>
+                        <?php foreach ($helper->getTimeSlot() as $value) : ?>
+                            <option value="<?php echo $value['value'] ?>" <?php echo ($value['value'] == $this->getShippingTimeslot() ? 'selected' : '') ?>  ><?php echo $value['label'] ?></option>
+                        <?php endforeach ?>
+                    </select>
+                <?php endif ?>
+                <?php if($helper->isShowShippingComment()) : ?>
+                    <textarea class="admin__control-textarea" name="shipping_arrival_comments" rows="5" placeholder="Shipping Comment"><?php echo $this->getShippingComment() ?></textarea>
+                <?php endif; ?>
+            </div>
+            <div class="box-actions">
+                <a href="javascript:void(0)" class="action edit" onclick="document.getElementById('delivery_form').submit();">
+                    <span><?php echo $block->escapeHtml(__('Update Delivery Date')); ?></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</form>
+<br>
+<!-- </div> -->
+<script type="text/x-magento-init">
+    {
+        "#delivery_arrival_date": {
+            "Bss_OrderDeliveryDate/js/date": {
+                "dateFormat": <?php echo $helper->getDateFormat() ?>,
+                "buttonText":"<?php echo __('Select Date') ?>",
+            }
+        }
+    }
+</script>

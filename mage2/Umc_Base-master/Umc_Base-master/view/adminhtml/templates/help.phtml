@@ -1,0 +1,45 @@
+<?php
+/**
+ * Umc_Base extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category  Umc
+ * @package   Umc_Base
+ * @copyright Marius Strajeru
+ * @license   http://opensource.org/licenses/mit-license.php MIT License
+ * @author    Marius Strajeru <ultimate.module.creator@gmail.com>
+ */
+?>
+<?php /** @var \Umc\Base\Block\Adminhtml\Help $block  */?>
+<fieldset id="help" class="fieldset fieldset-wide">
+    <legend class="legend">
+        <span><?php echo $block->escapeHtml(__('UMC2 Help')); ?></span>
+    </legend>
+    <div>
+        <?php echo $block->escapeHtml(__('The Ultimate Module Creator for Magento 2 (UMC2) is a Magento extension that lets you create other magento CRUD modules for your own entities. You can create as many entities as you want in one extension.'));?><br />
+        <?php echo $block->escapeHtml(__('This module is intended for developers. It should not be used in production.')); ?><br />
+        <?php echo $block->escapeHtml(__('Also, the modules you create with it should be tested before moved to production.'));?>
+    </div>
+</fieldset>
+<div class="umc-help admin__scope-old ">
+    <?php foreach ($block->getSections() as $section) : ?>
+        <?php echo $section->toHtml(); ?>
+    <?php endforeach;?>
+</div>
+<script type="text/javascript">
+    require(
+        ["jquery"],
+        function(jQuery){
+            jQuery(document).ready(function(){
+                jQuery('.fieldset-wrapper-content.collapse').collapse('hide');
+            });
+        }
+    );
+
+</script>

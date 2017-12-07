@@ -1,0 +1,1 @@
+<resource id="{{Namespace}}_{{Module}}::{{module}}_{{entity}}" title="{{EntitiesLabel}}" sortOrder="{{sortOrder}}" />

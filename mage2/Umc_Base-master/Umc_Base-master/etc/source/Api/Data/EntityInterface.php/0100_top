@@ -1,0 +1,22 @@
+    /**
+     * Get ID
+     *
+     * @return int|null
+     */
+    public function getId();
+
+    /**
+     * Get ID
+     *
+     * @return int|null
+     */
+    public function get{{Entity}}Id();
+
+    /**
+     * Set ID
+     *
+     * @param int ${{entity}}Id
+     * @return {{Entity}}Interface
+     */
+    public function set{{Entity}}Id(${{entity}}Id);
+

@@ -1,0 +1,15 @@
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="{{namespace}}_{{module}}/{{entity}}/massDelete"/>
+                        <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete {{EntitiesLabelEscaped}}</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected {{EntitiesLabelEscaped}}?</item>
+                        </item>
+                    </item>
+                </argument>
+            </action>
+

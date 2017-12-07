@@ -1,0 +1,9 @@
+    /**
+     * @param \{{Namespace}}\{{Module}}\Api\Data\{{Entity}}Interface ${{entity}}
+     * @return $this
+     */
+    protected function {{_}}massAction({{class {{Namespace}}\{{Module}}\Api\Data\{{Entity}}Interface}} ${{entity}})
+    {
+        $this->{{_}}{{entity}}Repository->delete(${{entity}});
+        return $this;
+    }
